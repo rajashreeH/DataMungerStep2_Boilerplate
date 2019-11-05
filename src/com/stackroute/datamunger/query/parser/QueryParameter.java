@@ -1,5 +1,6 @@
 package com.stackroute.datamunger.query.parser;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /* 
@@ -9,36 +10,78 @@ import java.util.List;
  * */
 
 public class QueryParameter {
+	
+	String filename;
+	String baseQuery;
 
+	
+	public void setFilename(String filename) {
+		this.filename = filename;
+	}
+	
 	public String getFileName() {
-		return null;
+		return filename;
+	}
+
+	public void setBaseQuery(String baseQuery) {
+		this.baseQuery = baseQuery;
 	}
 
 	public String getBaseQuery() {
-		return null;
+		return baseQuery;
 	}
 
+	List<Restriction> restrictionData;
 	public List<Restriction> getRestrictions() {
-		return null;
+		return this.restrictionData;
+	}
+	
+	public void setRestrictions(List<Restriction> restrictionData) {
+		this.restrictionData=restrictionData;
 	}
 
+	List<String> logicalData=new ArrayList<>();
+	public void setLogicalOperation(List<String> logicalData) {
+		this.logicalData=logicalData;
+	}
 	public List<String> getLogicalOperators() {
-		return null;
+		return this.logicalData;
 	}
 
+	List<String> fieldsData=new ArrayList<>();
 	public List<String> getFields() {
-		return null;
+		return fieldsData;
+	}
+	
+	public void setFields(List<String> fieldsData) {
+		this.fieldsData=fieldsData;
 	}
 
+	List<AggregateFunction> aggregateFunctions;
 	public List<AggregateFunction> getAggregateFunctions() {
-		return null;
+		return this.aggregateFunctions;
+	}
+	
+	public void setAggregateFunction(List<AggregateFunction> aggregateFunctions) {
+		this.aggregateFunctions=aggregateFunctions;
 	}
 
+	List<String> groupByFields=new ArrayList<>();
 	public List<String> getGroupByFields() {
-		return null;
+		return this.groupByFields;
+	}
+	
+	public void setGroupByFields(List<String> groupByFields){
+		this.groupByFields=groupByFields;
 	}
 
+	public List<String> orderByFields=new ArrayList<>();
+	
 	public List<String> getOrderByFields() {
-		return null;
+		return this.orderByFields;
+	}
+	
+	public void setOrderByFields(List<String> orderByFields) {
+		this.orderByFields=orderByFields;
 	}
 }

@@ -8,10 +8,27 @@ package com.stackroute.datamunger.query.parser;
  * */
 
 public class Restriction {
+	private String fieldName, fieldCondition, fieldValue;
 
 	// Write logic for constructor
 	public Restriction(String name, String value, String condition) {
-
+		this.fieldName = name;
+		this.fieldCondition = condition;
+		this.fieldValue = value;
 	}
+
+	public String getRestriction() {
+		return this.toString();
+	}
+
+	public void setRestriction(String name, String value, String condition) {
+		this.fieldName = name;
+		this.fieldCondition = condition;
+		this.fieldValue = value;
+	}
+	public String toString() {
+		return this.fieldName+" "+this.fieldValue+" "+this.fieldCondition;
+	}
+	
 
 }
